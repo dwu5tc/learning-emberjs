@@ -1,0 +1,22 @@
+<h4>Hello from Index</h4>
+
+<section>
+	{{#link-to "orders" class="orders-link"}}Orders{{/link-to}}
+</section>
+
+<section class="order-today">
+	<h1>Order Today</h1>
+	<p class="order-today__content">Our online store helps</p>
+	{{#link-to "orders"}}Order{{/link-to}}
+</section>
+
+<section class="products">
+	{{#each model as |product|}}
+		<div class="products__media">
+			<img src="{{product.imageUrl}}" />
+		</div>
+		<div class="products__content">
+			<h2>{{product.title}}: <b>${{product.price}}</b></h2>
+		</div>
+	{{/each}}
+</section>

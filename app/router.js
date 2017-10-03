@@ -16,3 +16,5 @@ Router.map(function() {
 });
 
 export default Router;
+
+// why does refreshing on http://localhost:4200/orders/some-order return blank page with errors?

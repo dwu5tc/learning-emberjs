@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import LineItem from "p1-ember/models/line-item";
+import LineItem from "p1-ember/models/line-item"; // why not p1-ember/app/models/...
 import Order from "p1-ember/models/order";
 import Product from "p1-ember/models/product";
 
@@ -19,14 +19,14 @@ const orders = [
 			LineItem.create({ product: products[3], quantity: 0})
 		]
 	}),
-	Order.create({ id: '4321', name: 'Idk idkidk', 
+	Order.create({ id: '4321', name: 'Idk Idkdkdk', 
 		items: [
 			LineItem.create({ product: products[0], quantity: 0}),
 			LineItem.create({ product: products[1], quantity: 1}),
 			LineItem.create({ product: products[2], quantity: 1}),
 			LineItem.create({ product: products[3], quantity: 0})
 		]
-	});
+	})
 ];
 
 export default Ember.Service.extend({
@@ -53,8 +53,9 @@ export default Ember.Service.extend({
 		});
 	},
 
-	saveOrder() {
-		order.set('id', 9999);
+	saveOrder(order) {
+		const id = Math.floor(Math.random() * 9999) + 1;
+		order.set('id', id);
 		orders.pushObject(order); // provided by ember. triggers value-changed events
 	}
 });

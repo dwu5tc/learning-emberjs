@@ -1,3 +1,5 @@
+<h4>ORDERS/INDEX.HBS</h4>
+
 <form {{action "createOrder" model on="submit"}}> <!-- model passed -->
 	<label for="name">Name</label>
 	{{input type="text" id="name" value=model.name}}
@@ -9,6 +11,7 @@
 			<button {{action "addToItemQuantity" item 10}}>+10</button> {{!-- 2 arguments are passed here --}}
 		</label>
 	{{/each}}
-
 	<button type="submit">Order</button>
 </form>
+
+<h4>ORDERS/INDEX.HBS</h4>
